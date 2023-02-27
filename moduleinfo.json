@@ -1,0 +1,25 @@
+{
+    "name": "Login as",
+    "archiveName": "grandeljay/login-as",
+    "sourceDir": "src",
+    "version": "auto",
+    "shortDescription": "Allows you to login as a customer.",
+    "description": "In order to verify what prices a customer sees you can use this module to login as a customer.",
+    "developer": "grandeljay",
+    "developerWebsite": "https://github.com/grandeljay",
+    "website": "https://github.com/grandeljay/modified-login-as",
+    "modifiedCompatibility": [
+        "2.0.7.2"
+    ],
+    "category": "productivity",
+    "price": "free",
+    "require": {
+        "composer/autoload": "^1.3.0",
+        "robinthehood/modified-std-module": "^0.8.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Grandeljay\\": "/vendor-no-composer/Grandeljay"
+        }
+    }
+}
