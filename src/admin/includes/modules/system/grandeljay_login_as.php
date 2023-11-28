@@ -31,7 +31,7 @@ class grandeljay_login_as extends StdModule
         $this->setAdminAccess(self::class);
     }
 
-    protected function updateSteps()
+    protected function updateSteps(): int
     {
         if (version_compare($this->getVersion(), self::VERSION, '<')) {
             $this->setVersion(self::VERSION);
