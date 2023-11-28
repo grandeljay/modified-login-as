@@ -48,6 +48,8 @@ if ('POST' === $_SERVER['REQUEST_METHOD'] && isset($_POST['customers_id'])) {
     foreach (\auto_include(DIR_FS_CATALOG . 'includes/extra/login/', 'php') as $file) {
         require $file;
     }
+
+    \xtc_redirect(HTTPS_SERVER);
 }
 
 require \DIR_FS_LANGUAGES . $_SESSION['language'] . '/admin/customers.php';
