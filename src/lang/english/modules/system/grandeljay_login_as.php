@@ -1,7 +1,7 @@
 <?php
 
 /**
- * German translations
+ * English translations
  *
  * @author  Jay Trees <login-as@grandels.email>
  * @link    https://github.com/grandeljay/modified-login-as
@@ -14,13 +14,13 @@ $translations_general = array(
     /**
      * Module
      */
-    'TITLE'             => 'grandeljay - Anmelden als',
-    'LONG_DESCRIPTION'  => 'Ermöglicht es Ihnen, sich als Kunde anzumelden.',
-    'STATUS_TITLE'      => 'Modul aktivieren?',
-    'STATUS_DESC'       => 'Ermöglicht es Ihnen, sich als Kunde anzumelden.',
-    'TEXT_TITLE'        => 'Anmelden als',
+    'TITLE'             => 'grandeljay - Login as',
+    'LONG_DESCRIPTION'  => 'Allows you to login as a customer.',
+    'STATUS_TITLE'      => 'Activate module?',
+    'STATUS_DESC'       => 'Allows you to login as a customer.',
+    'TEXT_TITLE'        => 'Login as',
 
-    'LOGIN_AS_CUSTOMER' => 'Als Kunde anmelden',
+    'LOGIN_AS_CUSTOMER' => 'Login as a customer',
 );
 
 /**
