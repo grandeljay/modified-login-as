@@ -8,7 +8,7 @@
  * @package GrandelJayLoginAs
  */
 
-namespace Grandeljay\Loginas;
+namespace Grandeljay\LoginAs;
 
 if (\rth_is_module_disabled('MODULE_GRANDELJAY_LOGIN_AS')) {
     return;

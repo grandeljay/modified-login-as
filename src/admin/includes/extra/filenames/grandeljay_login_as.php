@@ -8,6 +8,6 @@
  * @package GrandelJayLoginAs
  */
 
-namespace Grandeljay\Loginas;
+namespace Grandeljay\LoginAs;
 
 define('FILENAME_GRANDELJAY_LOGIN_AS', pathinfo(__FILE__, PATHINFO_BASENAME));

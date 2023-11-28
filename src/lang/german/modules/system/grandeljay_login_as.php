@@ -8,7 +8,7 @@
  * @package GrandelJayLoginAs
  */
 
-namespace Grandeljay\Loginas;
+namespace Grandeljay\LoginAs;
 
 $translations_general = array(
     /**
