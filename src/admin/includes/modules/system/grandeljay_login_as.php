@@ -15,7 +15,7 @@ use RobinTheHood\ModifiedStdModule\Classes\StdModule;
 
 class grandeljay_login_as extends StdModule
 {
-    public const VERSION = '0.2.1';
+    public const VERSION = '0.3.0';
 
     public function __construct()
     {
