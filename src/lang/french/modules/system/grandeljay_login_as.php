@@ -10,7 +10,7 @@
 
 namespace Grandeljay\LoginAs;
 
-$translations_general = array(
+$translations_general = [
     /**
      * Module
      */
@@ -21,7 +21,7 @@ $translations_general = array(
     'TEXT_TITLE'        => 'S\'inscrire en tant que',
 
     'LOGIN_AS_CUSTOMER' => 'S\'inscrire comme client',
-);
+];
 
 /**
  * Define

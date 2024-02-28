@@ -16,7 +16,7 @@ if ('POST' === $_SERVER['REQUEST_METHOD'] && isset($_POST['customers_id'])) {
     /**
      * Log on
      */
-    if (\SESSION_RECREATE == 'True') {
+    if ('True' === \SESSION_RECREATE) {
         \xtc_session_recreate();
     }
 
@@ -112,7 +112,7 @@ require \DIR_WS_INCLUDES . 'head.php';
                     <td>
                     <!-- PAGINATION-->
                     <div class="smallText pdg2 flt-l"><?php echo $customers_split->display_count($customers_query_numrows, $page_max_display_results, $page, TEXT_DISPLAY_NUMBER_OF_CUSTOMERS); ?></div>
-                    <div class="smallText pdg2 flt-r"><?php echo $customers_split->display_links($customers_query_numrows, $page_max_display_results, \MAX_DISPLAY_PAGE_LINKS, $page, xtc_get_all_get_params(array('page', 'info', 'x', 'y', 'cID'))); ?></div>
+                    <div class="smallText pdg2 flt-r"><?php echo $customers_split->display_links($customers_query_numrows, $page_max_display_results, \MAX_DISPLAY_PAGE_LINKS, $page, xtc_get_all_get_params(['page', 'info', 'x', 'y', 'cID'])); ?></div>
                     <?php echo draw_input_per_page($PHP_SELF, $cfg_max_display_results_key, $page_max_display_results); ?>
                     <?php
                     if (isset($_GET['search'])) {

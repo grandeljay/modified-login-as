@@ -19,10 +19,10 @@ $admin_access_name = pathinfo($filename, PATHINFO_FILENAME);
 
 require DIR_FS_LANGUAGES . $_SESSION['language'] . '/modules/system/grandeljay_login_as.php';
 
-$add_contents[BOX_HEADING_CUSTOMERS][] = array(
+$add_contents[BOX_HEADING_CUSTOMERS][] = [
     'admin_access_name' => $admin_access_name,
     'filename'          => $filename,
     'boxname'           => MODULE_GRANDELJAY_LOGIN_AS_LOGIN_AS_CUSTOMER,
     'parameters'        => '',
     'ssl'               => 'SSL',
-);
+];
