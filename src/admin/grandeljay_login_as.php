@@ -62,9 +62,21 @@ require \DIR_WS_INCLUDES . 'head.php';
     require \DIR_WS_INCLUDES . 'header.php';
 
     if ('POST' !== $_SERVER['REQUEST_METHOD']) {
-        $customers_query = xtc_db_query(
-            sprintf('SELECT * FROM `%s`', \TABLE_CUSTOMERS)
+        $current_page_number     = $_GET['page'] ?? 1;
+        $max_results_per_page    = 1000;
+        $sql_query_results_count = 0;
+        $customers_sql           = sprintf(
+            'SELECT *
+               FROM `%s`',
+            \TABLE_CUSTOMERS
         );
+        $customers_split         = new \splitPageResults(
+            $current_page_number,
+            $max_results_per_page,
+            $customers_sql,
+            $sql_query_results_count
+        );
+        $customers_query         = xtc_db_query($customers_sql);
         ?>
 
         <table class="tableBoxCenter collapse">
@@ -109,19 +121,10 @@ require \DIR_WS_INCLUDES . 'head.php';
                 <?php } ?>
 
                 <tr>
-                    <td>
+                    <td colspan="12">
                     <!-- PAGINATION-->
-                    <div class="smallText pdg2 flt-l"><?php echo $customers_split->display_count($customers_query_numrows, $page_max_display_results, $page, TEXT_DISPLAY_NUMBER_OF_CUSTOMERS); ?></div>
-                    <div class="smallText pdg2 flt-r"><?php echo $customers_split->display_links($customers_query_numrows, $page_max_display_results, \MAX_DISPLAY_PAGE_LINKS, $page, xtc_get_all_get_params(['page', 'info', 'x', 'y', 'cID'])); ?></div>
-                    <?php echo draw_input_per_page($PHP_SELF, $cfg_max_display_results_key, $page_max_display_results); ?>
-                    <?php
-                    if (isset($_GET['search'])) {
-                        ?>
-                        <div class="clear"></div>
-                        <div class="smallText pdg2 flt-r"><?php echo '<a class="button" onclick="this.blur();" href="' . xtc_href_link(\FILENAME_CUSTOMERS) . '">' . BUTTON_RESET . '</a>'; ?></div>
-                        <?php
-                    }
-                    ?>
+                    <div class="smallText pdg2 flt-l"><?php echo $customers_split->display_count($sql_query_results_count, $max_results_per_page, $current_page_number, TEXT_DISPLAY_NUMBER_OF_CUSTOMERS); ?></div>
+                    <div class="smallText pdg2 flt-r"><?php echo $customers_split->display_links($sql_query_results_count, $max_results_per_page, \MAX_DISPLAY_PAGE_LINKS, $current_page_number, xtc_get_all_get_params(['page', 'info', 'x', 'y', 'cID'])); ?></div>
                     </td>
                     <td>&nbsp;</td>
                 </tr>
